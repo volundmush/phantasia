@@ -5,7 +5,7 @@ import random
 import string
 from datetime import timezone
 import datetime
-
+import pathlib
 
 def utcnow():
     dt = datetime.datetime.utcnow()
@@ -258,3 +258,8 @@ def iequals(first: str, second: str):
 class SafeDict(dict):
     def __missing__(self, key):
         return '{' + key + '}'
+
+
+def read_file(path: pathlib.Path) -> str:
+    with path.open("r") as f:
+        return f.read()

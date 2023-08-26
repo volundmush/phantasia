@@ -4,3 +4,7 @@ aiocouchdb
 aioquic
 setproctitle
 rich
+passlib
+sanic-jwt
+argon2_cffi
+Jinja2

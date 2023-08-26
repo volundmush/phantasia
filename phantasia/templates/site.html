@@ -1,0 +1,7 @@
+<div id="content" class="d-flex">
+    <nav id="navbar" class="p-3 bg-light">
+        <a href="#" hx-get="/site/home" hx-target="#main_window" hx-swap="outerHTML">Home</a>
+        <a href="#" hx-get="/site/login" hx-target="#main_window" hx-swap="outerHTML">Login</a>
+    </nav>
+    <main id="main_window" class="p-3" hx-get="/site/home" hx-trigger="load" hx-swap="outerHTML"></main>
+</div>

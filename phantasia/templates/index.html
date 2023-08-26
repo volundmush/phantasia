@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block body %}
+<main hx-get="/initialContent" hx-trigger="load" hx-swap="outerHTML"></main>
+{% endblock %}
+

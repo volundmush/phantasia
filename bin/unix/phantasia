@@ -1,6 +1,0 @@
-#!/usr/bin/env python
-
-if __name__ == "__main__":
-    from phantasia.launcher import Launcher
-    launcher = Launcher()
-    launcher.run()

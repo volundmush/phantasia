@@ -1,0 +1,30 @@
+body {
+    font-family: monospace;
+}
+
+#content {
+    min-height: 100vh;
+}
+
+#navbar {
+    width: 20%;
+}
+
+#navbar a {
+    display: block;
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #ccc;
+}
+
+#navbar a:hover {
+    box-shadow: 0 0 10px #fff;
+}
+
+#main_window {
+    width: 80%;
+    float: right;
+    transition: opacity 0.5s ease;
+}
