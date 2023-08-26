@@ -7,6 +7,12 @@ from datetime import timezone
 import datetime
 import pathlib
 
+from passlib.context import CryptContext
+pwd_context = CryptContext(
+    schemes=["argon2"],
+    default="argon2",
+)
+
 def utcnow():
     dt = datetime.datetime.utcnow()
     return dt.replace(tzinfo=timezone.utc)

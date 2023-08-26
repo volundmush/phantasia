@@ -2,7 +2,7 @@
 {% block main_contents %}
   <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="border p-4">
-      <form id="login-form" hx-post="/login" hx-swap="outerHTML">
+      <form id="login-form" hx-post="/register" hx-swap="outerHTML">
         <div class="mb-3">
           <label for="username" class="form-label">Username</label>
           <input type="text" class="form-control" id="username" name="username" required>
@@ -11,7 +11,7 @@
           <label for="password" class="form-label">Password</label>
           <input type="password" class="form-control" id="password" name="password" required>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary">Register</button>
       </form>
     </div>
   </div>

@@ -1,7 +1,8 @@
 <div id="content" class="d-flex">
-    <nav id="navbar" class="p-3 bg-light">
-        <a href="#" hx-get="/site/home" hx-target="#main_window" hx-swap="outerHTML">Home</a>
-        <a href="#" hx-get="/site/login" hx-target="#main_window" hx-swap="outerHTML">Login</a>
+    <nav id="navbar" class="p-3">
+        {% for item in nav_items %}
+            <a href="#" hx-get="{{ item.path }}" hx-target="#main_window" hx-swap="outerHTML swap:0.2s">{{ item.label }}</a>
+        {% endfor %}
     </nav>
-    <main id="main_window" class="p-3" hx-get="/site/home" hx-trigger="load" hx-swap="outerHTML"></main>
+    <main id="main_window" class="p-3 fade-me-in fade-me-out" hx-get="/site/home" hx-trigger="load" hx-swap="outerHTML"></main>
 </div>

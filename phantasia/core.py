@@ -1,4 +1,2 @@
-
 class PhantasiaModule:
     pass
-

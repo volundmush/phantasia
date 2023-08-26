@@ -1,5 +1,12 @@
+:root {
+    --bs-bg: #343a40;  /* dark background */
+    --bs-text: #ffffff;  /* white text */
+}
+
 body {
     font-family: monospace;
+    background-color: var(--bs-bg);
+    color: var(--bs-text);
 }
 
 #content {
@@ -15,7 +22,6 @@ body {
     background-color: #f0f0f0;
     padding: 10px;
     text-decoration: none;
-    color: black;
     border-bottom: 1px solid #ccc;
 }
 
@@ -26,5 +32,18 @@ body {
 #main_window {
     width: 80%;
     float: right;
-    transition: opacity 0.5s ease;
+}
+
+.fade-me-out.htmx-swapping {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.fade-me-in.htmx-added {
+  opacity: 0;
+}
+
+.fade-me-in {
+  opacity: 1;
+  transition: opacity 1s ease-out;
 }
