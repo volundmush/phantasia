@@ -2,7 +2,7 @@
 {% block main_contents %}
   <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="border p-4">
-      <form id="login-form" hx-post="/login" hx-swap="outerHTML">
+      <form id="login-form" hx-post="/auth" hx-ext="json-enc">
         <div class="mb-3">
           <label for="username" class="form-label">Username</label>
           <input type="text" class="form-control" id="username" name="username" required>

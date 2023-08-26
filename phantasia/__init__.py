@@ -7,7 +7,7 @@ from sanic_ext import render
 
 from sanic_jwt import initialize, exceptions
 from sanic_jwt.decorators import protected, inject_user
-from .db import authenticate, setup_db
+from .db import authenticate, setup_db, retrieve_user
 
 phantasia_folder = Path(__file__).resolve().parent  # Get the absolute path of the current file
 
@@ -26,6 +26,7 @@ else:
 
 jwt = initialize(app,
                  authenticate=authenticate,
+                 retrieve_user=retrieve_user,
                  claim_aud=app.config.HOST_NAME,
                  claim_iss=app.config.HOST_NAME,
                  claim_iat=True,

@@ -33,29 +33,6 @@ async def site_page_get(request, page_name):
     return await render(f"site/{page_name}.html", context=request.app.ctx.template_info)
 
 
-@bp.post("/login")
-async def handle_login(request):
-    # Access form data
-    username = request.form.get('username')
-    password = request.form.get('password')
-
-    result = await request.app.ctx.db.query("SELECT username,password FROM user WHERE string::lowercase(username) = $username",
-                                            {"username": username.lower()})
-
-    if not (results := result[0]["result"]):
-        return response.redirect("/site/login?error=Invalid+username+or+password")
-
-    if len(results) != 1:
-        return response.redirect("/site/login?error=Invalid+username+or+password")
-
-    user = results[0]
-    if not pwd_context.verify(password, user["password"]):
-        return response.redirect("/site/login?error=Invalid+username+or+password")
-
-    # all good!
-    # set the session cookie and redirect to the home page.
-
-
 @bp.post("/register")
 async def handle_register(request):
     # Access form data
